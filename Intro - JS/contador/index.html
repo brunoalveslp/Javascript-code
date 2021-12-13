@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            text-align: center;
+            background-color: rgb(208, 243, 243);
+        }
+
+        button {
+            border-radius: 50%;
+            background-color: azure;
+            width: 2rem;
+            height: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contador</h1>
+        <button id="minus">-</button>
+        <span id="show"></span>
+        <button id="plus">+</button>
+    </div>
+
+    <script>
+        let counter = 0;
+
+        const minus = document.querySelector('#minus');
+        const plus = document.querySelector('#plus');
+        const display = document.querySelector('#show');
+        
+        addToCount(counter);
+
+        window.addEventListener('click',e=>{
+            if(e.target == minus)
+            {
+                counter--;
+                addToCount(counter);
+            }else if(e.target == plus){
+                counter++;
+                addToCount(counter);
+            }
+        });
+
+        function addToCount(value){
+            display.innerHTML = value;
+        }
+    </script>
+</body>
+</html>
